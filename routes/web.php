@@ -14,4 +14,4 @@ Route::get('/',[PagesController::class,'root'])->name('root');
 // vendor/laravel/ui/src/AuthRouteMethods.php
 Auth::routes(['verify' => true]);
 
-Route::resource('users',UsersController::class,['only' => 'show','edit','update']);
+Route::resource('users',UsersController::class,['only' => ['show','edit','update']]);
