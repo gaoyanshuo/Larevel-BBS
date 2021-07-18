@@ -55,10 +55,10 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'captcha' => ['required', 'captcha'],
         ],
-        [
-            'captcha.required' => '画像の文字を入力してください',
-            'captcha.captcha' => '正しい文字を入力してください',
-        ]);
+            [
+                'captcha.required' => '画像の文字を入力してください',
+                'captcha.captcha' => '正しい文字を入力してください',
+            ]);
     }
 
     /**
