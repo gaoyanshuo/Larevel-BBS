@@ -30,11 +30,17 @@
               {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('users.show',\Illuminate\Support\Facades\Auth::id()) }}">个人中心</a>
-              <a class="dropdown-item" href="{{ route('users.edit',\Illuminate\Support\Facades\Auth::id()) }}">编辑资料</a>
+              <a class="dropdown-item" href="{{ route('users.show',\Illuminate\Support\Facades\Auth::id()) }}">
+                <i class="far fa-user mr-2"></i>
+                个人中心
+              </a>
+              <a class="dropdown-item" href="{{ route('users.edit',\Illuminate\Support\Facades\Auth::id()) }}">
+                <i class="far fa-edit mr-2"></i>
+                编辑资料
+              </a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" id="logout" href="#">
-                <form action="{{ route('logout') }}" method="POST">
+                <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('ログアウトで宜しいでしょうか？')">
                   @csrf
                   <button class="btn btn-block btn-danger" type="submit" name="button">退出</button>
                 </form>
