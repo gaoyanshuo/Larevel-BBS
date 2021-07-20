@@ -50,9 +50,14 @@
           <a href="{{ route('topics.edit', $topic->id) }}" class="btn btn-outline-secondary btn-sm" role="button">
             <i class="far fa-edit"></i> 編集
           </a>
-          <a href="#" class="btn btn-outline-secondary btn-sm" role="button">
+
+          <form action="{{ route('topics.destroy',$topic->id) }}" method="post" style="display: inline-block;" onsubmit="return confirm('本当に削除しますか？');">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-outline-secondary btn-sm">
             <i class="far fa-trash-alt"></i> 削除
-          </a>
+            </button>
+          </form>
         </div>
 
       </div>
