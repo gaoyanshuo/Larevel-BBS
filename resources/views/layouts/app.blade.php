@@ -14,6 +14,8 @@
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
+  @stack('style')
+
 </head>
 
 <body>
@@ -34,6 +36,9 @@
 
 <!-- Scripts -->
 <script src="{{ mix('js/app.js') }}"></script>
+
+@stack('script')
+
 </body>
 
 </html>
