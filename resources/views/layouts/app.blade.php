@@ -10,7 +10,7 @@
   @csrf
 
   <title>@yield('title', 'LaraBBS') - Laravel BBS</title>
-
+  <meta name="description" content="@yield('description','LaraBBS')">
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
