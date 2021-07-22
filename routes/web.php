@@ -7,7 +7,7 @@ use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\TranslateController;
 use App\Http\Controllers\RepliesController;
-
+use App\Http\Controllers\NotificationsController;
 
 Route::get('/',[PagesController::class,'root'])->name('root');
 
@@ -26,3 +26,5 @@ Route::post('upload_image',[TopicsController::class,'upload_image'])->name('topi
 Route::post('/translate/ajax', [TranslateController::class, 'translate'])->name('translate.translate');
 
 Route::resource('replies', RepliesController::class, ['only' => [ 'store', 'destroy']]);
+
+Route::resource('notifications',NotificationsController::class,['only' => ['index']]);
