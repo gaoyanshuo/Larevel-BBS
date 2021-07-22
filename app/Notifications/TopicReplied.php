@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class TopicReplied extends Notification
+class TopicReplied extends Notification implements ShouldQueue
 {
     use Queueable;
     public $reply;
@@ -30,13 +30,12 @@ class TopicReplied extends Notification
      */
     public function via($notifiable)
     {
-        return ['database'];
+        return ['database','mail'];
     }
 
     public function toDatabase($notifiable)
     {
         $topic = $this->reply->topic;
-//        $link =  $topic->link(['topics' . $this->reply->id]);
 
         // 存入数据库里的数据
         return [
@@ -51,13 +50,14 @@ class TopicReplied extends Notification
         ];
     }
 
-//    public function toMail($notifiable)
-//    {
-//        return (new MailMessage)
-//                    ->line('The introduction to the notification.')
-//                    ->action('Notification Action', url('/'))
-//                    ->line('Thank you for using our application!');
-//    }
+    public function toMail($notifiable)
+    {
+        $topic = $this->reply->topic;
+        $url ='topics' .'/'. $topic->id;
+        return (new MailMessage)
+                    ->line('あなたのトピックは他の方にコメントされました')
+                    ->action('確認', url($url));
+    }
 
 
 }
