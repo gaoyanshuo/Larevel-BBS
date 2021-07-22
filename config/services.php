@@ -30,4 +30,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'google-translate' => [
+        'api_key'  => env('GOOGLE_TRANSLATION_API_KEY'),
+    ],
+
 ];

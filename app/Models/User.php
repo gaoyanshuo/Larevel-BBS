@@ -53,4 +53,9 @@ class User extends Authenticatable implements MustVerifyEmailContract
     {
         return $this->id == $moel->user_id;
     }
+
+    public function replies()
+    {
+        $this->hasMany(Reply::class);
+    }
 }

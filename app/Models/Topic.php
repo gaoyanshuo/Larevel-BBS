@@ -21,6 +21,11 @@ class Topic extends Model
         return $this->belongsto(User::class);
     }
 
+    public function replies()
+    {
+        $this->hasMany(Reply::class);
+    }
+
     public function scopeWithOrder($query,$order)
     {
         //不同的排序，使用不同的数据读取逻辑

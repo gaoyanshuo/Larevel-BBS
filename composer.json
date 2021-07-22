@@ -26,7 +26,8 @@
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3",
-        "summerblue/generator": "8.*"
+        "summerblue/generator": "8.*",
+        "google/cloud-translate": "*"
     },
     "autoload": {
         "psr-4": {
