@@ -6,7 +6,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TopicsController;
 use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\TranslateController;
-
+use App\Http\Controllers\RepliesController;
 
 
 Route::get('/',[PagesController::class,'root'])->name('root');
@@ -25,4 +25,4 @@ Route::post('upload_image',[TopicsController::class,'upload_image'])->name('topi
 //google translate API
 Route::post('/translate/ajax', [TranslateController::class, 'translate'])->name('translate.translate');
 
-Route::resource('replies', 'RepliesController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('replies', RepliesController::class, ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);

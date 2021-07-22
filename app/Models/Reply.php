@@ -7,16 +7,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Reply extends Model
 {
     use HasFactory;
-
+    protected $table = 'replies';
     protected $fillable = ['content'];
 
     public function topic()
     {
-        $this->belongsTo(Topic::class);
+        return $this->belongsTo(Topic::class);
     }
 
     public function user()
     {
-        $this->belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }

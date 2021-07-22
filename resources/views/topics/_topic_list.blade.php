@@ -21,7 +21,7 @@
 
           <small class="media-body meta text-secondary">
 
-            <a class="text-secondary" href="{{ route('categories.show', $topic->category_id) }}" title="{{ $topic->category->name }}">
+            <a class="text-secondary" href="#" title="{{ $topic->category->name }}">
               <i class="far fa-folder"></i>
               {{ $topic->category->name }}
             </a>
@@ -47,5 +47,5 @@
   </ul>
 
 @else
-  <div class="empty-block">暂无数据 :p </div>
+  <div class="empty-block">暂无数据 ~_~ </div>
 @endif
