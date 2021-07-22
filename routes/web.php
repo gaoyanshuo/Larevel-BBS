@@ -25,4 +25,4 @@ Route::post('upload_image',[TopicsController::class,'upload_image'])->name('topi
 //google translate API
 Route::post('/translate/ajax', [TranslateController::class, 'translate'])->name('translate.translate');
 
-Route::resource('replies', RepliesController::class, ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
+Route::resource('replies', RepliesController::class, ['only' => [ 'store', 'destroy']]);
