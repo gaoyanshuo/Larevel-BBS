@@ -23,4 +23,9 @@ class TopicObserver
     {
         $topic->body = clean($topic->body,'user_topic_body');
     }
+
+    public function deleted(Topic $topic)
+    {
+        $topic->replies()->delete();
+    }
 }
