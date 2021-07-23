@@ -37,13 +37,10 @@
           </li>
 
           <li class="nav-item dropdown">
-
-          <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}" class="img-responsive img-circle" width="30px" height="30px">
               {{ Auth::user()->name }}
             </a>
-
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               @can('manage_contents')
                 <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
@@ -52,19 +49,15 @@
                 </a>
                 <div class="dropdown-divider"></div>
               @endcan
-
-              <a class="dropdown-item" href="{{ route('users.show',\Illuminate\Support\Facades\Auth::id()) }}">
+              <a class="dropdown-item" href="{{ route('users.show', \Illuminate\Support\Facades\Auth::id()) }}">
                 <i class="far fa-user mr-2"></i>
                 个人中心
               </a>
-              <div class="dropdown-divider"></div>
-
               <a class="dropdown-item" href="{{ route('users.edit',\Illuminate\Support\Facades\Auth::id()) }}">
                 <i class="far fa-edit mr-2"></i>
                 编辑资料
               </a>
               <div class="dropdown-divider"></div>
-
               <a class="dropdown-item" id="logout" href="#">
                 <form action="{{ route('logout') }}" method="POST" onsubmit="return confirm('ログアウトで宜しいでしょうか？')">
                   @csrf
