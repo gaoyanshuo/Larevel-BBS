@@ -28,3 +28,5 @@ Route::post('/translate/ajax', [TranslateController::class, 'translate'])->name(
 Route::resource('replies', RepliesController::class, ['only' => [ 'store', 'destroy']]);
 
 Route::resource('notifications',NotificationsController::class,['only' => ['index']]);
+
+Route::get('permission-denied',[PagesController::class,'permissionDenied'])->name('permission-denied');
