@@ -9,8 +9,9 @@
   <!-- CSRF Token -->
   @csrf
 
-  <title>@yield('title', 'LaraBBS') - Laravel BBS</title>
-  <meta name="description" content="@yield('description','LaraBBS')">
+  <title>@yield('title', 'LaraBBS') - {{ setting('site_name','Laravel') }}</title>
+  <meta name="description" content="@yield('description', setting('seo_description','LaraBBS'))">
+  <meta name="keywords" content="@yield('keyword', setting('seo_keyword', 'LaraBBS,community'))" />
   <!-- Styles -->
   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
