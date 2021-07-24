@@ -9,7 +9,8 @@ use App\Http\Controllers\TranslateController;
 use App\Http\Controllers\RepliesController;
 use App\Http\Controllers\NotificationsController;
 
-Route::get('/',[PagesController::class,'root'])->name('root');
+//Route::get('/',[PagesController::class,'root'])->name('root');
+Route::get('/',[TopicsController::class,'index'])->name('root');
 
 // vendor/laravel/ui/src/AuthRouteMethods.php
 Auth::routes(['verify' => true]);
